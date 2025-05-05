@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Hotel_Management_System.Models.Staff>
+
+
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StaffName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Position)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StaffName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Position)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+             @*    <td>
+                    <a asp-action="Edit" asp-route-id="@item.Sid">Edit</a> |
+
+
+                    <a asp-action="Delete" asp-route-id="@item.Sid">Delete</a>
+                </td> *@
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+@* <div>
+    <a class="nav-link text-danger" asp-area="" asp-controller="Staff" asp-action="logout">Log Out</a>
+</div> *@

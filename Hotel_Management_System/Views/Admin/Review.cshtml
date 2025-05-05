@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Hotel_Management_System.Models.Review>
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Reviewid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reviews)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Hid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Replay)
+            </th>
+          
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reviewid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reviews)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Replay)
+                </td>
+              
+
+
+                <td>
+
+
+
+                    <a asp-action="ReviewEdit" asp-route-id="@item.Hid" class="nav-link text-danger">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
